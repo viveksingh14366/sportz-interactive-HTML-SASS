@@ -1,0 +1,572 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(160deg, #EA14EC 0%, #1246CE 100%);
+}
+
+.si-container {
+  max-width: 1190px;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+
+.si-score-section {
+  position: relative;
+  color: #fff;
+  padding: 8rem 0;
+  background: linear-gradient(160deg, #EA14EC 0%, #1246CE 100%);
+}
+.si-score-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: url(../img/pointerbg-before.png) no-repeat top left/contain;
+}
+.si-score-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url(../img/pointerbg-after.png) no-repeat bottom right/contain;
+}
+
+.si-data-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.si-data-status h1 {
+  font-size: 1.6rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+}
+.si-data-status h1::before {
+  content: "";
+  width: 2.2rem;
+  height: 1.7rem;
+  display: inline-block;
+  filter: brightness(0) invert(1);
+  margin-right: 0.5rem;
+  margin-bottom: -3px;
+  background: url(../img/ball-icon.png) no-repeat center/contain;
+}
+.si-data-status p {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  padding: 1.5rem 0;
+  text-transform: uppercase;
+}
+.si-data-status .si-livematch {
+  width: 50rem;
+  position: relative;
+}
+.si-data-status .si-livematch::before {
+  content: "";
+  width: 50rem;
+  height: 0.1rem;
+  display: block;
+  opacity: 0.2;
+  background: rgba(247, 247, 250, 0.75);
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.si-data-status .si-livematch .si-livestatus {
+  display: flex;
+  justify-content: center;
+}
+.si-data-status .si-livematch .si-livestatus .si-live {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-radius: 2rem;
+  background: #008632;
+}
+.si-data-status .si-livematch .si-livestatus .si-live .si-liveicon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  display: inline-block;
+  background-color: #fff;
+  margin-right: 1rem;
+  border-radius: 100%;
+  border: 0.2rem solid rgba(0, 134, 50, 0.5);
+}
+
+.si-teamscore {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.si-teamscore .si-team {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.si-teamscore .si-teamlogo {
+  width: 13rem;
+  height: 13rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 3px solid rgba(229, 6, 147, 0);
+  background: #fff;
+  box-shadow: 0px 0px 2px 0px rgba(17, 23, 32, 0.75);
+}
+.si-teamscore .si-liveteam .si-teamlogo {
+  border-color: #E50695;
+}
+.si-teamscore .si-teamfirst .si-teamlogo {
+  margin-right: 2rem;
+}
+.si-teamscore .si-scoreone h2 {
+  font-size: 2.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.si-teamscore .si-scoreone h2 span {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.si-teamscore .si-scoretwo h3 {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.si-teamscore .si-scoretwo h3 span {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.si-teamscore .si-scorethree h3 {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.si-teamscore .si-scorethree h3 span {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.si-liveteam .si-teamscore .si-scorethree h3 {
+  color: #fff;
+}
+.si-teamscore .si-teamtwo .si-superover {
+  text-align: right;
+  margin-right: 2rem;
+}
+.si-teamscore .si-vs {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+.si-teamscore .si-vs span.si-vsname {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.si-result {
+  color: #F7F7FA;
+  width: 50rem;
+  margin: auto;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.si-result h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.si-venu p.si-venuname {
+  text-align: center;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.si-venu p.si-venuname::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  filter: brightness(0) invert(1);
+  margin-right: 0.8rem;
+  margin-bottom: -3px;
+  background: url(../img/stadium-icon.png) no-repeat center/contain;
+}
+
+.si-players {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+.si-players .si-batters-details p.si-battertitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.si-players .si-batters {
+  margin-right: 1.5rem;
+}
+.si-players .si-bowlers {
+  margin-left: 1.5rem;
+}
+.si-players .si-playerscard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 6rem;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+.si-players .si-playerscard .si-firstplayername {
+  display: flex;
+  align-items: center;
+}
+.si-players .si-playerscard .si-firstplayername p.si-playername {
+  color: #1C1C28;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+.si-players .si-playerscard .si-firstplayername p.si-playerscore {
+  color: #E50695;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.si-players .si-playerscard .si-partition {
+  width: 0.1rem;
+  height: 4rem;
+  margin: 0 2rem;
+  opacity: 0.2;
+  background: #1F1F1F;
+}
+
+.si-latestupdate-section {
+  padding: 4rem 0;
+}
+.si-latestupdate-section .si-lastest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.si-latestupdate-section .si-lastest h2 {
+  font-size: 2rem;
+}
+.si-latestupdate-section .si-lastest .si-seemore {
+  color: #E50695;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+.si-latestupdate-section .si-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+.si-latestupdate-section .si-row .si-col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 2rem;
+}
+.si-latestupdate-section .si-row .si-col-6 .si-postsection.postactive {
+  position: relative;
+}
+.si-latestupdate-section .si-row .si-col-6 .si-postsection.postactive::after {
+  content: "";
+  width: 95%;
+  height: 0.5rem;
+  display: block;
+  background: linear-gradient(90deg, #EA14EC 0%, #1246CE 100%);
+  position: absolute;
+  top: unset;
+  left: 2.5%;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+}
+.si-latestupdate-section .si-row .si-col-6 .si-postsection.postactive img.si-postimg {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.si-latestupdate-section .si-row .si-col-6 .si-postsection.postactive .si-postname {
+  color: #F7F7FA;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(360deg, #0f1c70 0%, rgba(45, 65, 207, 0) 100%);
+}
+.si-latestupdate-section .si-row .si-col-6 .si-postsection.postactive .si-postname h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.si-latestupdate-section .si-socialsection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.si-latestupdate-section .si-socialsection p {
+  opacity: 0.5;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+}
+.si-latestupdate-section .si-socialsection img.si-shareicon {
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) invert(1);
+}
+.si-latestupdate-section .si-col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 2rem;
+}
+.si-latestupdate-section .si-col-3 .si-postsections {
+  background: #F5F5F5;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.si-latestupdate-section .si-col-3 .si-postsections::after {
+  content: "";
+  width: 90%;
+  height: 0.5rem;
+  display: block;
+  background: linear-gradient(90deg, #EA14EC 0%, #1246CE 100%);
+  position: absolute;
+  top: unset;
+  left: 5%;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+}
+.si-latestupdate-section .si-col-3 .si-postimg-part img.si-postimg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top right;
+     object-position: top right;
+  border-radius: 0.5rem;
+}
+.si-latestupdate-section .si-col-3 .si-postname {
+  padding: 1.5rem;
+}
+.si-latestupdate-section .si-col-3 .si-postname h2 {
+  color: #1F1F1F;
+  font-size: 1.4rem;
+  font-weight: 500;
+  -webkit-box-orient: vertical;
+  height: 3.4em;
+  width: 100%;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 1.6;
+}
+.si-latestupdate-section .si-col-3 .si-socialsection img.si-shareicon {
+  filter: unset;
+}
+
+@media screen and (max-width: 960px) {
+  .si-players .si-batters {
+    margin-right: 1rem;
+  }
+  .si-players .si-bowlers {
+    margin-left: 1rem;
+  }
+  .si-players .si-playerscard {
+    padding: 0.5rem 3rem;
+  }
+  .si-players .si-playerscard .si-firstplayername p.si-playername {
+    font-size: 1.3rem;
+  }
+  .si-players .si-playerscard .si-firstplayername p.si-playerscore {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .si-data-status h1 {
+    line-height: 1.5;
+  }
+  .si-data-status .si-livematch {
+    width: 100%;
+  }
+  .si-data-status .si-livematch::before {
+    width: 100%;
+  }
+  .si-teamscore {
+    justify-content: space-between;
+  }
+  .si-teamscore .si-teamlogo {
+    width: 6rem;
+    height: 6rem;
+  }
+  .si-teamscore .si-teamlogo img {
+    width: 4rem;
+    border-radius: 100%;
+  }
+  .si-teamscore .si-teamfirst .si-teamlogo {
+    margin-right: 1rem;
+  }
+  .si-teamscore .si-scoreone h2 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .si-teamscore .si-scoretwo h3, .si-teamscore .si-scorethree h3 {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .si-teamscore .si-teamtwo .si-superover {
+    margin-right: 1rem;
+  }
+  .si-teamscore .si-vs {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .si-teamscore .si-vs span.si-vsname {
+    font-size: 1.2rem;
+  }
+  .si-result {
+    width: 100%;
+  }
+  .si-result h2 {
+    font-size: 1.4rem;
+  }
+  .si-players {
+    display: block;
+  }
+  .si-players .si-batters {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .si-players .si-bowlers {
+    margin-left: 0;
+  }
+  .si-latestupdate-section .si-row .si-col-6 {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .si-latestupdate-section .si-row .si-col-6 .si-postsection.postactive .si-postname {
+    color: #1F1F1F;
+    position: unset;
+    background: #F5F5F5;
+  }
+  .si-latestupdate-section .si-row .si-col-6 .si-postsection.postactive::after {
+    width: 100%;
+    height: 0.4rem;
+    left: 0;
+  }
+  .si-row .si-mdnone {
+    display: none;
+  }
+  .si-latestupdate-section .si-col-3 {
+    width: 100%;
+  }
+  .si-latestupdate-section .si-col-3 .si-postsections {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .si-latestupdate-section .si-col-3 .si-postsections::after {
+    content: unset;
+  }
+  .si-latestupdate-section .si-col-3 .si-postsections .si-postimg-part {
+    width: 100%;
+    position: relative;
+  }
+  .si-latestupdate-section .si-col-3 .si-postsections .si-postimg-part::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.6) 0%, rgba(50, 50, 50, 0) 100%);
+    border-radius: 0.5rem;
+  }
+  .si-latestupdate-section .si-col-3 .si-postsections .si-postimg-part::before {
+    content: "";
+    width: 90%;
+    height: 0.2rem;
+    position: absolute;
+    left: unset;
+    right: 5%;
+    bottom: -2px;
+    display: block;
+    background: linear-gradient(90deg, #EA14EC 0%, #1246CE 100%);
+  }
+  .si-latestupdate-section .si-col-3 .si-postsections::after {
+    width: 32%;
+    height: 0.2rem;
+    left: unset;
+    right: 2%;
+    bottom: -2px;
+  }
+  .si-latestupdate-section .si-col-3 .si-postname h2,
+  .si-latestupdate-section .si-col-6 .si-socialsection p {
+    font-size: 1.2rem;
+  }
+  .si-latestupdate-section .si-socialsection p {
+    font-size: 1rem;
+  }
+  .si-latestupdate-section .si-socialsection img.si-shareicon {
+    width: 1.6rem;
+    height: 1.6rem;
+    filter: unset;
+  }
+}/*# sourceMappingURL=style.css.map */
